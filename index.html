@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parent-div">
+        <p id="head-text">Simple Calculator</p>
+
+        <div>
+            <input type="text" id="first-number" placeholder="First Number">
+            <input type="text" id="second-number" placeholder="Second Number">
+        </div>
+
+        <button id="1" onclick="fun(this.id)" class="add">+</button>
+        <button id="2" onclick="fun(this.id)" class="sub">-</button>
+        <button id="3" onclick="fun(this.id)" class="multi">x</button>
+        <button id="4" onclick="fun(this.id)" class="div">/</button>
+
+        <p id="res">Answer : 
+            <span id="result">0</span>
+        </p>
+
+    </div>
+
+<script>
+    function fun(checkId){
+        var first_number , second_number , result;
+
+        first_number = document.getElementById("first-number").value;
+        second_number = document.getElementById("second-number").value;
+
+        if(checkId == 1){
+            result = parseInt(first_number) + parseInt(second_number);
+        }
+
+        else if(checkId == 2){
+            result = parseInt(first_number) - parseInt(second_number);
+        }
+
+        else if(checkId == 3){
+            result = parseInt(first_number) * parseInt(second_number);
+        }
+
+        else if(checkId == 4){
+            result = parseInt(first_number) / parseInt(second_number);
+        }
+
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+</body>
+</html>
